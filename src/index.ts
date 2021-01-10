@@ -1,13 +1,6 @@
 import { ApolloServer } from 'apollo-server'
-
-// typeDefs
-import countryType from './typeDefs/country'
-
-// resolvers
-import countryResolvers from './resolvers/country'
-
-const typeDefs = [countryType]
-const resolvers = [countryResolvers]
+import typeDefs from './typeDefs'
+import resolvers from './resolvers'
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
