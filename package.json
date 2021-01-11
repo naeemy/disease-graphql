@@ -7,6 +7,7 @@
     "start": "rimraf ./dist/* && tsc && nodemon dist/index.js"
   },
   "dependencies": {
+    "apollo-datasource-rest": "^0.9.6",
     "apollo-server": "^2.19.1",
     "graphql": "^15.4.0"
   },
