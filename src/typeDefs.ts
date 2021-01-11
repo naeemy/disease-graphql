@@ -22,7 +22,7 @@ const typeDefs = gql`
     tests: Int
     testsPerOneMillion: Int
     population: Int
-    continent: Int
+    continent: String
     oneCasePerPeople: Int
     oneDeathPerPeople: Int
     oneTestPerPeople: Int
