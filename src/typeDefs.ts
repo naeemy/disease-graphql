@@ -3,7 +3,7 @@ import { gql } from 'apollo-server'
 const typeDefs = gql`
 
   type Query {
-    country(code: String): Country
+    country(code: String!): Country
   }
 
   type Country {
