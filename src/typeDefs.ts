@@ -6,8 +6,10 @@ const typeDefs = gql`
     country(code: String!): Country
   }
 
+  scalar DateTime
+
   type Country {
-    updated: String
+    updated: DateTime
     country: String
     cases: Int
     todayCases: Int

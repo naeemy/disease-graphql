@@ -1,6 +1,6 @@
 export type ByCountry = {
-  updated: String
-  country: String
+  updated: number
+  country: string
   cases: number
   todayCases: number
   deaths: number
