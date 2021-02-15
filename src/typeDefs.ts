@@ -1,36 +1,8 @@
-import { gql } from 'apollo-server'
+const path = require('path');
+import { mergeTypeDefs } from '@graphql-tools/merge'
+import { loadFilesSync } from '@graphql-tools/load-files'
 
-const typeDefs = gql`
+const typesArray = loadFilesSync(path.join(__dirname, '../schemas'), { extensions: ['graphql'] });
+const typeDefs = mergeTypeDefs(typesArray);
 
-  type Query {
-    country(code: String!): Country
-  }
-
-  scalar DateTime
-
-  type Country {
-    updated: DateTime
-    country: String
-    cases: Int
-    todayCases: Int
-    deaths: Int
-    todayDeaths: Int
-    recovered: Int
-    todayRecovered: Int
-    active: Int
-    critical: Int
-    casesPerOneMillion: Int
-    deathsPerOneMillion: Int
-    tests: Int
-    testsPerOneMillion: Int
-    population: Int
-    continent: String
-    oneCasePerPeople: Int
-    oneDeathPerPeople: Int
-    oneTestPerPeople: Int
-    activePerOneMillion: Int
-    recoveredPerOneMillion: Int
-    criticalPerOneMillion: Int
-  }
-`
 export default [typeDefs]

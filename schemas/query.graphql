@@ -1,0 +1,3 @@
+type Query {
+  country(code: String!): Country
+}
