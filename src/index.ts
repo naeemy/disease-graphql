@@ -8,7 +8,10 @@ const server = new ApolloServer({
   resolvers,
   dataSources: () => ({
     diseaseAPI: new diseaseAPI()
-  })
+  }),
+  cacheControl: {
+    defaultMaxAge: 60,
+  },
 })
 
 server.listen().then(({ url }) => {
